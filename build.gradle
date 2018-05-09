@@ -1,17 +1,16 @@
 plugins {
 	id 'java'
 	id 'idea'
-	id 'application'
 	id 'com.github.johnrengelman.shadow' version '2.0.3'
 }
 
 version '1.0_0' // MAJOR.MINOR_PATCH
 
-sourceCompatibility = 1.8
+// sourceCompatibility = 1.8
 
 repositories {
 	jcenter()
-	maven {url 'https://jitpack.io'}
+	//maven {url 'https://jitpack.io'}
 }
 
 //noinspection SpellCheckingInspection
@@ -25,7 +24,7 @@ dependencies {
 	compile group: 'org.json', name: 'json', version: '20180130'
 
 	// Logback - https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
-	compile 'ch.qos.logback:logback-classic:1.2.3'
+	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 
 	// SQLite - https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
 	compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.21.0.1'
