@@ -1,0 +1,30 @@
+<!--
+  ~ Place this in the following directory and name it "logback.xml"
+  ~ For testing, you'll want to have a copy of this and name it "logback-test.xml"
+  ~ src
+  ~ - main
+  ~   - resources
+  ~     - logback.xml
+  ~ - test
+  ~   - resources
+  ~     - logback-test.xml
+  -->
+
+<!-- author: Kaidan Gustave -->
+<!--suppress ALL -->
+<configuration>
+	<statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+
+	<!-- Conversions for logging. -->
+	<!-- Make sure to replace the "converterClass" path with the path to the file in your project. -->
+	<conversionRule conversionWord="simpleHL" converterClass="io.magiccraftmaster.slf4j.SimpleHL"/>
+
+	<appender name="Simple" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder><pattern>%nopex[%d{yyyy-MM-dd}] [%d{HH:mm:ss}] [%simpleHL(%level)] [%logger{0}] %simpleHL(%msg%n%ex)</pattern></encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="Simple"/>
+	</root>
+
+</configuration>
